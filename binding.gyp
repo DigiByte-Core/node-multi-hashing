@@ -4,6 +4,7 @@
             "target_name": "multihashing",
             "sources": [
                 "src/multihashing.cc",
+                "src/odo.c",
                 "src/bcrypt.c",
                 "src/blake.c",
                 "src/boolberry.cc",
@@ -60,6 +61,7 @@
                 "src/sha3/sph_sha2big.c",
                 "src/sha3/sph_tiger.c",
                 "src/sha3/hamsi.c",
+                "src/sha3/KeccakP-800-reference.c",
                 "src/crypto/lyra2.c",
                 "src/crypto/sponge.c",
                 "src/crypto/oaes_lib.c",
@@ -72,6 +74,7 @@
                 "src/crypto/aesb.c",
                 "src/crypto/sha256.c",
                 "src/crypto/wild_keccak.cpp",
+                "src/crypto/odocrypt.cpp",
                 "src/neoscrypt.c",
                 "src/crypto/yescrypt/yescrypt-best.c",
                 "src/crypto/yescrypt/yescryptcommon.c",

@@ -36,10 +36,10 @@ extern "C" {
     #include "x16rv2.h"
     #include "neoscrypt.h"
     #include "crypto/argon2/argon2.h"
-    #include "crypto/yescrypt/yescrypt.h"
 }
 
 #include "boolberry.h"
+#include "odo.h"
 
 using namespace node;
 using namespace Nan;
@@ -92,6 +92,7 @@ using namespace v8;
  DECLARE_CALLBACK(lyra2rev2, lyra2rev2_hash, 32);
  DECLARE_CALLBACK(lyra2rev3, lyra2rev3_hash, 32);
  DECLARE_CALLBACK(lyra2z, lyra2z_hash, 32);
+ DECLARE_CALLBACK(odo, odo_hash, 32);
  DECLARE_CALLBACK(nist5, nist5_hash, 32);
  DECLARE_CALLBACK(quark, quark_hash, 32);
  DECLARE_CALLBACK(qubit, qubit_hash, 32);
@@ -104,7 +105,6 @@ using namespace v8;
  DECLARE_CALLBACK(x15, x15_hash, 32);
  DECLARE_CALLBACK(x16r, x16r_hash, 32);
  DECLARE_CALLBACK(x16rv2, x16rv2_hash, 32);
- DECLARE_CALLBACK(yescrypt, yescrypt_hash, 32);
 
 DECLARE_FUNC(argon2d) {
     if (info.Length() < 4)
@@ -415,13 +415,13 @@ NAN_MODULE_INIT(init) {
     NAN_EXPORT(target, sha256d);
     NAN_EXPORT(target, shavite3);
     NAN_EXPORT(target, skein);
+    NAN_EXPORT(target, odo);
     NAN_EXPORT(target, x11);
     NAN_EXPORT(target, x13);
     NAN_EXPORT(target, x15);
     NAN_EXPORT(target, x16r);
     NAN_EXPORT(target, x16rv2);
     NAN_EXPORT(target, neoscrypt);
-    NAN_EXPORT(target, yescrypt);
 }
 
 NAN_MODULE_WORKER_ENABLED(multihashing, init);
